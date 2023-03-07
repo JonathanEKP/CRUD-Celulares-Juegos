@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import './Menu.css'
 import { MdAdminPanelSettings } from 'react-icons/md';
+
 
 function Menu() {
   return (
     <div>
-        <nav className="navbar navbar-expand-md bg-custom">
+        <nav className="navbar navbar-expand-md" style={{backgroundColor:'#313130'}}>
         <div className="container-fluid ">
           <Link className="navbar-brand text-white fs-1" to='/'>
             <MdAdminPanelSettings className='d-flex align-items-center'/>
@@ -30,7 +30,7 @@ function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active text-white fw-normal text-uppercase" aria-current="page" to="/">
+                <Link className="nav-link active text-white fw-normal text-uppercase" aria-current="page" to="/celulares">
                   Celulares
                 </Link>
               </li>
