@@ -7,7 +7,7 @@ function BotonEliminar() {
       <button type="button" className="btn btn-outline-danger p-2 ">
         <div className="d-flex align-items-center">
           <TiDeleteOutline/>
-          Editar
+          Eliminar
         </div>
       </button>
     </div>
