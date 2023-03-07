@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Celulares from "./Components/Celulares";
 import CelularesForm from "./Components/CelularesForm";
+import Juegos from "./Components/Juegos";
+import JuegosForm from "./Components/JuegosForm";
 import HomePage from "./Components/HomePage"; 
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/celulares" element={<Celulares />} />
           <Route path="/celulares/Add" element={<CelularesForm />} />
+          <Route path="/juegos" element={<Juegos />} />
+          <Route path="/juegos/Add" element={<JuegosForm />} />
         </Routes>
       </BrowserRouter>
     </div>
