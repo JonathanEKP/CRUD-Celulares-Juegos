@@ -1,0 +1,4 @@
+.bg-custom {
+    --bs-bg-opacity: 1;
+    background-color: #313130 !important;
+  }

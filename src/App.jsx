@@ -1,9 +1,15 @@
 import React from 'react'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import HomePage from './Components/HomePage'
 
 function App() {
   return (
     <div>
-        <button className='btn btn-outline-danger'>asd</button>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<HomePage/>}/>
+            </Routes>
+        </BrowserRouter>
     </div>
   )
 }
