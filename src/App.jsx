@@ -16,6 +16,8 @@ function App() {
           <Route path="/celulares/Add" element={<CelularesForm />} />
           <Route path="/juegos" element={<Juegos />} />
           <Route path="/juegos/Add" element={<JuegosForm />} />
+          <Route path="/juegos/Edit/:id" element={<JuegosForm />} />
+          <Route path="/juegos/Delete/:id" element={<JuegosForm del={true} />} />
         </Routes>
       </BrowserRouter>
     </div>
