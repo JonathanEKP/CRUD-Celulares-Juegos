@@ -42,6 +42,7 @@ function Tabla({ filas, campos, controlador }) {
                 <td>
                   <Link to={`/${controlador}/Delete/${Object.values(value)[0]}`}>
                     <BotonEliminar />
+                    
                   </Link>
                 </td>
               </tr>
