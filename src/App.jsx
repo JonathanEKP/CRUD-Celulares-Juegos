@@ -14,6 +14,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/celulares" element={<Celulares />} />
           <Route path="/celulares/Add" element={<CelularesForm />} />
+          <Route path="/celulares/Edit/:id" element={<CelularesForm/>}/>
+          <Route path="/celulares/Delete/:id" element={<CelularesForm del={true}/>}/>
           <Route path="/juegos" element={<Juegos />} />
           <Route path="/juegos/Add" element={<JuegosForm />} />
         </Routes>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Menu from "./Menu";
-import Tabla from "./tabla";
+import Tabla from "./Tabla";
 
 function Juegos() {
   const [juegos, setJuegos] = useState();
