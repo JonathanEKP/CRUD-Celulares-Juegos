@@ -20,6 +20,20 @@ function Celulares() {
     } catch (error) {
       alert(error);
     }
+<<<<<<< HEAD
+    catch(error){
+        alert(error)
+    }
+}
+    return (
+        <div>
+           <Menu/>
+            <h1>Celulares</h1>
+            {celulares == undefined?
+            <div className="spinner-border text-primary" role="status"><span></span></div>
+            : <Tabla filas={celulares} controlador= "celulares" campos={["ID", "Marca", "Modelo", "Color","Precio","Descripcion","Operadora" ]} />}
+       
+=======
   }
   return (
     <div>
@@ -29,6 +43,7 @@ function Celulares() {
           <div className="spinner-border text-primary" role="status">
             <span>Loading...</span>
           </div>
+>>>>>>> 00a677ac0a5a60e587e906327879860c0a740c22
         </div>
       ) : (
         <Tabla
