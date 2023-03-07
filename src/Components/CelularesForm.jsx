@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Menu from "./Menu/Menu";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 function CelularesForm(){
@@ -12,39 +14,112 @@ function CelularesForm(){
     const [descripcion, setdescripcion] = useState("")
     const [operadora, setoperadora] = useState("")
 
+
+    const navigate = useNavigate()
+
     useEffect(() => {
         
     })
+    
 
+    function enviar(e){
+        e.preventDefault()
+        e.stopPropagation()
+        const form = document.querySelector("#formulario")
+
+        if (form.checkValidity() == false) 
+          form.classList.add('was-validated')
+        else{
+            guardar()
+        }
+        
+    }
+
+
+    async function guardar(){
+        try{
+            const celular = {
+                marca: marca,
+                modelo: modelo,                
+                color: color,               
+                precio: precio,             
+                descripcion: descripcion,              
+                operadora: operadora
+                
+
+            }
+            const res = await axios({
+                method: "POST",
+                url:"https://denny2023.azurewebsites.net/api/celulares",
+                data: celular
+            })
+
+            const data = await res.data
+            alert(data.message)
+            if(data.status==1)
+                navigate("/celulares")
+
+        }catch(error){
+            alert (error)
+        }
+    }
     return(
         <div>
             <Menu />
         <h1>add</h1>
-        <form id="formulario">
+        <form id="formulario" className="needs-validation" noValidate>
             <div className="form-group">
                 <label className="form-label">Marca:</label>
-                <input className="form-control" type="text" value={marca} onChange={(e) => setmarca(e.target.value)}/>
-
-                <label className="form-label">Modelo:</label>
-                <input className="form-control" type="text" value={modelo} onChange={(e) => setmodelo(e.target.value)}/>
-
-                <label className="form-label">Color:</label>
-                <input className="form-control" type="text" value={color} onChange={(e) => setcolor(e.target.value)}/>
-
-                <label className="form-label">Precio:</label>
-                <input className="form-control" type="text" value={precio} onChange={(e) => setprecio(e.target.value)}/>
-
-                <label className="form-label">Descripcion:</label>
-                <input className="form-control" type="text" value={descripcion} onChange={(e) => setdescripcion(e.target.value)}/>
-
-                <label className="form-label">Operadora:</label>
-                <input className="form-control"type="text" value={operadora} onChange={(e) => setoperadora(e.target.value)}/>
-
+                <input className="form-control" required type="text" value={marca} onChange={(e) => setmarca(e.target.value)}/>
+                <div className="valid-feedback">Correcto</div>
+                <div className="invalid-feedback">Complete el campo</div>
             </div>
+
+            <div className="form-group mt-2">
+                <label className="form-label">Modelo:</label>
+                <input className="form-control" required type="text" value={modelo} onChange={(e) => setmodelo(e.target.value)}/>
+                <div className="valid-feedback">Correcto</div>
+                <div className="invalid-feedback">Complete el campo</div>
+             </div>
+
+            <div className="form-group mt-2">
+                <label className="form-label">Color:</label>
+                <input className="form-control" required type="text" value={color} onChange={(e) => setcolor(e.target.value)}/>
+            </div>  
+
+            <div className="form-group mt-2">
+                <label className="form-label">Precio:</label>
+                <input className="form-control" required type="text" value={precio} onChange={(e) => setprecio(e.target.value)}/>
+                <div className="valid-feedback">Correcto</div>
+                <div className="invalid-feedback">Complete el campo</div>
+            </div>
+
+            <div className="form-group mt-2">
+                <label className="form-label">Descripcion:</label>
+                <input className="form-control" required type="text" value={descripcion} onChange={(e) => setdescripcion(e.target.value)}/>
+                <div className="valid-feedback">Correcto</div>
+                <div className="invalid-feedback">Complete el campo</div>
+             </div>
+
+            <div className="form-group mt-2">
+                <label className="form-label">Operadora:</label>
+                <input className="form-control" required type="text" value={operadora} onChange={(e) => setoperadora(e.target.value)}/>
+                <div className="valid-feedback">Correcto</div>
+                <div className="invalid-feedback">Complete el campo</div>
+            </div>
+
+            <div className="form-group mt-2">
+               <button className="btn btn-success" onClick={(e)=> enviar(e)}>Agregar</button>
+               <button className="btn btn-secondary" required onClick={()=> navigate("/celulares")} >Cancelar</button>
+               <div className="valid-feedback">Correcto</div>
+               <div className="invalid-feedback">Complete el campo</div>
+            </div>
+            
         </form>
     </div>
     )
     
+
 }
 
 export default CelularesForm

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Tabla({filas, campos}){
+function Tabla({filas, campos, controlador}){
 
     useEffect(() =>{
 
@@ -19,10 +19,9 @@ function Tabla({filas, campos}){
                            return  <th key={index}>{value}</th>
 
                         })}
-                        <td><Link to="/celulares/Add" className="btn btn-success">NUEVO</Link></td>
+                        <td><Link to={`/${controlador}/Add`} className="btn btn-success">NUEVO</Link></td>
                     </tr>
                 </thead>
-
                 <tbody>
                             {filas.map((value, index)=> {
                                 return  <tr key={index}>
@@ -32,7 +31,7 @@ function Tabla({filas, campos}){
 
                                     })}
                                     <td>
-                                        <Link className="btn btn-primary">EDITAR</Link>
+                                        
                                         <Link className="btn btn-danger">ELIMINAR</Link>
 
                                     </td>
@@ -40,8 +39,7 @@ function Tabla({filas, campos}){
                                     </tr>
                             })}
                 </tbody>
-
-            </table>
+                 </table>
         </div>
     )
 }

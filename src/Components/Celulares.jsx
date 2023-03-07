@@ -32,8 +32,8 @@ async function ObtenerCelulares(){
            <Menu/>
             <h1>Celulares</h1>
             {celulares == undefined?
-            <div className="spinner-border text-primary" role="status"><span>Loading...</span></div>
-            : <Tabla filas={celulares} campos={["ID", "Marca", "Modelo", "Color","Precio","Descripcion","Operadora" ]} />}
+            <div className="spinner-border text-primary" role="status"><span></span></div>
+            : <Tabla filas={celulares} controlador= "celulares" campos={["ID", "Marca", "Modelo", "Color","Precio","Descripcion","Operadora" ]} />}
        
         </div>
     )
