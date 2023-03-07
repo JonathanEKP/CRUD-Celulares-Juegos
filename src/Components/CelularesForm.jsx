@@ -135,126 +135,151 @@ function CelularesForm({ del }) {
   return (
     <div>
       <Menu />
-      <h1></h1>
+      <h1 className="text-center mt-3">
+        {id == undefined
+          ? "Agregar un celular"
+          : del != true
+          ? "Editar celular"
+          : "Borrar un celular"}
+      </h1>
       <form id="formulario" className="needs-validation container" noValidate>
-        {id !== undefined ? (
-          <div className="form-group mt-2">
-            <label className="form-label">
-              <AiOutlineFieldNumber />
-              Celular ID:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              value={id}
-              readOnly
-              disabled
-            />
+        <div className="row g-0">
+          {id !== undefined ? (
+            <div className="form-group mt-2 col-6">
+              <div className="w-75 mx-auto">
+                <label className="form-label">
+                  <AiOutlineFieldNumber />
+                  Celular ID:
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={id}
+                  readOnly
+                  disabled
+                />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          <div className="form-group mt-2 col-6">
+            <div className="w-75 mx-auto">
+              <label className="form-label">
+                <FiSmartphone />
+                Marca:
+              </label>
+              <input
+                className="form-control"
+                required
+                type="text"
+                value={marca}
+                disabled={del ? true : false}
+                onChange={(e) => setMarca(e.target.value)}
+              />
+              <div className="valid-feedback">Correcto</div>
+              <div className="invalid-feedback">Complete el campo</div>
+            </div>
           </div>
-        ) : (
-          ""
-        )}
-        <div className="form-group">
-          <label className="form-label">
-            <FiSmartphone />
-            Marca:
-          </label>
-          <input
-            className="form-control"
-            required
-            type="text"
-            value={marca}
-            disabled={del ? true : false}
-            onChange={(e) => setMarca(e.target.value)}
-          />
-          <div className="valid-feedback">Correcto</div>
-          <div className="invalid-feedback">Complete el campo</div>
+
+          <div className="form-group mt-2 col-6">
+            <div className="w-75 mx-auto">
+              <label className="form-label">
+                <HiOutlineRectangleStack />
+                Modelo:
+              </label>
+              <input
+                className="form-control"
+                required
+                type="text"
+                value={modelo}
+                disabled={del ? true : false}
+                onChange={(e) => setModelo(e.target.value)}
+              />
+              <div className="valid-feedback">Correcto</div>
+              <div className="invalid-feedback">Complete el campo</div>
+            </div>
+          </div>
+
+          <div className="form-group col-6 mt-2">
+            <div className="w-75 mx-auto">
+              <label className="form-label">
+                <IoColorPaletteOutline />
+                Color:
+              </label>
+              <input
+                className="form-control"
+                required
+                type="text"
+                value={color}
+                disabled={del ? true : false}
+                onChange={(e) => setColor(e.target.value)}
+              />
+              <div className="valid-feedback">Correcto</div>
+              <div className="invalid-feedback">Complete el campo</div>
+            </div>
+          </div>
+
+          <div className="form-group col-6 mt-2">
+            <div className="w-75 mx-auto">
+              <label className="form-label">
+                <RiMoneyDollarCircleLine />
+                Precio:
+              </label>
+              <input
+                className="form-control"
+                required
+                type="text"
+                value={precio}
+                disabled={del ? true : false}
+                onChange={(e) => setPrecio(e.target.value)}
+              />
+              <div className="valid-feedback">Correcto</div>
+              <div className="invalid-feedback">Complete el campo</div>
+            </div>
+          </div>
+
+          <div className="form-group col-6 mt-2">
+            <div className="w-75 mx-auto">
+              <label className="form-label">
+                <TbFileDescription />
+                Descripcion:
+              </label>
+              <input
+                className="form-control"
+                required
+                type="text"
+                value={descripcion}
+                disabled={del ? true : false}
+                onChange={(e) => setDescripcion(e.target.value)}
+              />
+              <div className="valid-feedback">Correcto</div>
+              <div className="invalid-feedback">Complete el campo</div>
+            </div>
+          </div>
+
+          <div className="form-group col-6 mt-2">
+            <div className="w-75 mx-auto">
+              <label className="form-label">
+                <MdSignalCellular3Bar />
+                Operadora:
+              </label>
+              <input
+                className="form-control"
+                required
+                type="text"
+                value={operadora}
+                disabled={del ? true : false}
+                onChange={(e) => setOperadora(e.target.value)}
+              />
+              <div className="valid-feedback">Correcto</div>
+              <div className="invalid-feedback">Complete el campo</div>
+            </div>
+          </div>
         </div>
 
-        <div className="form-group mt-2">
-          <label className="form-label">
-            <HiOutlineRectangleStack />
-            Modelo:
-          </label>
-          <input
-            className="form-control"
-            required
-            type="text"
-            value={modelo}
-            disabled={del ? true : false}
-            onChange={(e) => setModelo(e.target.value)}
-          />
-          <div className="valid-feedback">Correcto</div>
-          <div className="invalid-feedback">Complete el campo</div>
-        </div>
-
-        <div className="form-group mt-2">
-          <label className="form-label">
-            <IoColorPaletteOutline />
-            Color:
-          </label>
-          <input
-            className="form-control"
-            required
-            type="text"
-            value={color}
-            disabled={del ? true : false}
-            onChange={(e) => setColor(e.target.value)}
-          />
-        </div>
-
-        <div className="form-group mt-2">
-          <label className="form-label">
-            <RiMoneyDollarCircleLine />
-            Precio:
-          </label>
-          <input
-            className="form-control"
-            required
-            type="text"
-            value={precio}
-            disabled={del ? true : false}
-            onChange={(e) => setPrecio(e.target.value)}
-          />
-          <div className="valid-feedback">Correcto</div>
-          <div className="invalid-feedback">Complete el campo</div>
-        </div>
-
-        <div className="form-group mt-2">
-          <label className="form-label">
-            <TbFileDescription />
-            Descripcion:
-          </label>
-          <input
-            className="form-control"
-            required
-            type="text"
-            value={descripcion}
-            disabled={del ? true : false}
-            onChange={(e) => setDescripcion(e.target.value)}
-          />
-          <div className="valid-feedback">Correcto</div>
-          <div className="invalid-feedback">Complete el campo</div>
-        </div>
-
-        <div className="form-group mt-2">
-          <label className="form-label">
-            <MdSignalCellular3Bar />
-            Operadora:
-          </label>
-          <input
-            className="form-control"
-            required
-            type="text"
-            value={operadora}
-            disabled={del ? true : false}
-            onChange={(e) => setOperadora(e.target.value)}
-          />
-          <div className="valid-feedback">Correcto</div>
-          <div className="invalid-feedback">Complete el campo</div>
-        </div>
-
-        <div className="form-group mt-2">
+        <div className="form-group mt-4">
+          <div className="d-flex justify-content-center gap-2">
           <button
             className={`btn btn-${
               id == undefined ? "success" : del ? "danger" : "primary"
@@ -269,6 +294,7 @@ function CelularesForm({ del }) {
           >
             Cancelar
           </button>
+          </div>
         </div>
       </form>
     </div>

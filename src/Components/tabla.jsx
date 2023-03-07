@@ -12,14 +12,16 @@ function Tabla({ filas, campos, controlador }) {
     <div className="container mt-3">
       <table className="table">
         <thead>
-          <td>
-            <Link to={`/${controlador}/Add`}>
-              <BotonGeneral>
-                <AiOutlineUserAdd />
-                Agregar
-              </BotonGeneral>
-            </Link>
-          </td>
+          <tr >
+            <td colSpan={3}>
+              <Link to={`/${controlador}/Add`}>
+                <BotonGeneral>
+                  <AiOutlineUserAdd />
+                  Agregar
+                </BotonGeneral>
+              </Link>
+            </td>
+          </tr>
           <tr className="table-secondary">
             {campos.map((value, index) => {
               return <th key={index}>{value}</th>;
@@ -40,9 +42,10 @@ function Tabla({ filas, campos, controlador }) {
                   </Link>
                 </td>
                 <td>
-                  <Link to={`/${controlador}/Delete/${Object.values(value)[0]}`}>
+                  <Link
+                    to={`/${controlador}/Delete/${Object.values(value)[0]}`}
+                  >
                     <BotonEliminar />
-                    
                   </Link>
                 </td>
               </tr>
