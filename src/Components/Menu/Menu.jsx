@@ -30,7 +30,7 @@ function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active text-white fw-normal text-uppercase" aria-current="page" to="/">
+                <Link className="nav-link active text-white fw-normal text-uppercase" aria-current="page" to="/Celulares">
                   Celulares
                 </Link>
               </li>

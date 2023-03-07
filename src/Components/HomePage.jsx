@@ -8,6 +8,7 @@ function HomePage() {
         <Menu/>
     </div>
   )
+  
 }
 
 export default HomePage
