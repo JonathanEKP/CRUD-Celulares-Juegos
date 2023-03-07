@@ -59,8 +59,8 @@ function CelularesForm() {
   return (
     <div>
       <Menu />
-      <h1>add</h1>
-      <form id="formulario" className="needs-validation" noValidate>
+      <h1></h1>
+      <form id="formulario" className="needs-validation container" noValidate>
         <div className="form-group">
           <label className="form-label">
             <FiSmartphone />
@@ -157,17 +157,14 @@ function CelularesForm() {
 
         <div className="form-group mt-2">
           <button className="btn btn-success" onClick={(e) => enviar(e)}>
-            Agregar
+            Guardar
           </button>
           <button
             className="btn btn-secondary"
-            required
             onClick={() => navigate("/celulares")}
           >
             Cancelar
           </button>
-          <div className="valid-feedback">Correcto</div>
-          <div className="invalid-feedback">Complete el campo</div>
         </div>
       </form>
     </div>
