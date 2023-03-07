@@ -106,7 +106,7 @@ async function eliminar(){
   }
   catch(error){
       if(error.response.status == 404){
-          alert("Autor no existe!")
+          alert("El juego no existe")
           navigate("/juegos")
       }
       else
