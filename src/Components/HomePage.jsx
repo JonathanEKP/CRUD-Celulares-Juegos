@@ -20,6 +20,7 @@ function HomePage() {
         </BotonGeneral>
     </div>
   )
+  
 }
 
 export default HomePage
