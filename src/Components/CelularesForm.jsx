@@ -40,7 +40,7 @@ function CelularesForm() {
         color: color,
         precio: precio,
         descripcion: descripcion,
-        operadora: operadora,
+        operadora: operadora
       };
       const res = await axios({
         method: "POST",
