@@ -4,14 +4,13 @@ import Celulares from "./Components/Celulares";
 import CelularesForm from "./Components/CelularesForm";
 import Juegos from "./Components/Juegos";
 import JuegosForm from "./Components/JuegosForm";
-import HomePage from "./Components/HomePage"; 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Celulares />} />
           <Route path="/celulares" element={<Celulares />} />
           <Route path="/celulares/Add" element={<CelularesForm />} />
           <Route path="/celulares/Edit/:id" element={<CelularesForm/>}/>

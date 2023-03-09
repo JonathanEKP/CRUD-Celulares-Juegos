@@ -286,7 +286,7 @@ function CelularesForm({ del }) {
             }`}
             onClick={(e) => enviar(e)}
           >
-            {id == undefined ? "Guardar" : del ? "ELiminar" : "Editar"}
+            {id == undefined ? "Guardar" : del ? "Eliminar" : "Editar"}
           </button>
           <button
             className="btn btn-secondary"
