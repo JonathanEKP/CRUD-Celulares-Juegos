@@ -30,15 +30,6 @@ function Menu() {
                 <Link
                   className="nav-link active text-white fw-normal text-uppercase"
                   aria-current="page"
-                  to="/"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link active text-white fw-normal text-uppercase"
-                  aria-current="page"
                   to="/celulares"
                 >
                   Celulares
